@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,28 +8,73 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>{title}</title>
+    <meta
+      name="Keywords"
+      content="arduino, raspberry, kinect, creative code, gopro,
+                                   dmx, GrandMa, Chamsys, MagicQ, Avolites, lighting,
+                                   software technology, design futurism,
+                                   interactive art, software art,
+                                   website, web design, web marketing, web development,
+                                   art, interactive, interaction art, art installations, games, art theory,
+                                   Iacopo Pancotti, Gianluca Parma,
+                                   Milano, Milan, Italia, Italy"
+    />
+    <meta
+      name="Description"
+      content="We can support your projects with many technology solutions"
+    />
+
+    <meta
+      property="og:title"
+      content="PasixLab - Interactive art, creative code, software art, installation art, lighting, web development"
+    />
+    <meta
+      property="og:description"
+      content="We can support your projects with many technology solutions"
+    />
+    <meta property="og:url" content="http://pasixlab.com/" />
+    <meta
+      property="og:image"
+      content="http://pasixlab.com/full_metal_jacket.jpg"
+    />
+    <meta property="og:site_name" content="PasixLab" />
+    <meta property="og:type" content="profile" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  :root {
+    --accent: #8c0808;
+    --font: rgb(179, 179, 179);
+    --background: rgb(0, 0, 0);
+    --foregraund: #4d1212;
+    font-size: 30px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    height: 100vh;
+    line-height: 1.15;
+    font-family: "Lato", sans-serif;
+    background-color: var(--background);
+    color: var(--font);
+  }
+  body {
+    margin: 0;
+  }
 </style>
