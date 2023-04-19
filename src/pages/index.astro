@@ -50,7 +50,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </main>
   <div class="footer">
-    <p>© 2012-present pasixLab | Monza-Brianza, Italy</p>
+    <p>© 2011-{new Date().getFullYear()} pasixLab | Monza-Brianza, Italy</p>
     <p>
       Photo by <a href="https://unsplash.com/@danotis">Dan Otis</a> on
       <a href="https://unsplash.com/photos/OYFHT4X5isg">Unsplash</a>
@@ -129,7 +129,7 @@ import Layout from "../layouts/Layout.astro";
   }
   .parallax-three {
     width: 100%;
-    background-image: url(/three.webp);
+    background-image: url(/trees.webp);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -137,7 +137,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .section-title {
-    font-size: 25px;
+    font-size: 22px;
     padding-bottom: 10px;
     text-align: left;
   }
@@ -149,7 +149,6 @@ import Layout from "../layouts/Layout.astro";
 
   .list {
     padding-left: 20px;
-    padding-bottom: 40px;
     text-align: left;
   }
   .list li {
@@ -160,7 +159,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .content {
-    padding: 50px 0px 0px;
+    padding: 20px 0px 0px;
   }
   @media screen and (min-width: 992px) {
     .content {
@@ -172,7 +171,12 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     justify-content: space-between;
     max-width: 800px;
-    margin: 0 auto 60px;
+    margin: 0 auto 30px;
+  }
+  @media screen and (min-width: 992px) {
+    .features {
+      margin-bottom: 80px;
+    }
   }
   .features div:first-child {
     margin-right: 20px;
@@ -191,7 +195,7 @@ import Layout from "../layouts/Layout.astro";
     line-height: 1.5;
   }
   .contact a {
-    margin-top: 40px;
+    margin-top: 30px;
     font-size: 20px;
     display: block;
     text-decoration: none;
