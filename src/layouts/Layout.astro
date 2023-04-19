@@ -1,9 +1,10 @@
 ---
 export interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -13,30 +14,10 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>{title}</title>
-    <meta
-      name="Keywords"
-      content="arduino, raspberry, kinect, creative code, gopro,
-                                   dmx, GrandMa, Chamsys, MagicQ, Avolites, lighting,
-                                   software technology, design futurism,
-                                   interactive art, software art,
-                                   website, web design, web marketing, web development,
-                                   art, interactive, interaction art, art installations, games, art theory,
-                                   Iacopo Pancotti, Gianluca Parma,
-                                   Milano, Milan, Italia, Italy"
-    />
-    <meta
-      name="Description"
-      content="We can support your projects with many technology solutions"
-    />
+    <meta name="description" content={description} />
 
-    <meta
-      property="og:title"
-      content="PasixLab - Interactive art, creative code, software art, installation art, lighting, web development"
-    />
-    <meta
-      property="og:description"
-      content="We can support your projects with many technology solutions"
-    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:url" content="http://pasixlab.com/" />
     <meta
       property="og:image"
@@ -62,20 +43,20 @@ const { title } = Astro.props;
     --font: rgb(179, 179, 179);
     --background: rgb(0, 0, 0);
     --foregraund: #4d1212;
-    font-size: 30px;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  html {
-    height: 100vh;
+    font-size: 16px;
     line-height: 1.15;
     font-family: "Lato", sans-serif;
     background-color: var(--background);
     color: var(--font);
-    min-width: 250px;
   }
-  body {
+  @media screen and (min-width: 992px) {
+    :root {
+      font-size: 20px;
+    }
+  }
+  * {
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
   }
 </style>

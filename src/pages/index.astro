@@ -2,8 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
+<!-- Interactive art, creative code, software art, installation art, lighting, web development -->
 <Layout
-  title="PasixLab - Interactive art, creative code, software art, installation art, lighting, web development"
+  title="PasixLab - Coding, data analytics, DIY lab"
+  description="Your partner for Coding, data analytics, DIY lab"
 >
   <main class="page">
     <div class="intro full-height parallax-three">
@@ -12,20 +14,54 @@ import Layout from "../layouts/Layout.astro";
       </h1>
     </div>
     <div class="content full-height">
-      <p>
-        Hei, tell us your idea, we can help you!<br />
-        We can support your projects with many technology solutions.<br />
-      </p>
-      <a href="mailto:iac@pasixlab.com" target="_blank">Let's connect</a>
+      <div class="features">
+        <div>
+          <h2 class="section-title">Our Services</h2>
+          <ul class="list">
+            <li>
+              Integrated digital solutions: website, ecommerce, operations
+              software
+            </li>
+            <li>Web perfomance & analytics</li>
+            <li>Creative code, interactive installations, lighting</li>
+            <li>Home automation</li>
+            <li>Data analytics consulting</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="section-title">Our Values</h2>
+          <ul class="list">
+            <li>High code quality and highly tested</li>
+            <li>Data-driven decision</li>
+            <li>Creative and lateral thinking</li>
+            <li>Agile Methodology: incremental and iterative</li>
+            <li>Functional programming and statically typed language</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contact">
+        <p>
+          Hey, tell us your idea, we can help you!<br />
+          We can support your projects with many technology solutions.<br />
+        </p>
+        <a href="mailto:iac@pasixlab.com" target="_blank">Let's connect</a>
+      </div>
     </div>
   </main>
-  <div class="footer">© 2012-present pasixLab | Monza-Brianza, Italy</div>
+  <div class="footer">
+    <p>© 2012-present pasixLab | Monza-Brianza, Italy</p>
+    <p>
+      Photo by <a href="https://unsplash.com/@danotis">Dan Otis</a> on
+      <a href="https://unsplash.com/photos/OYFHT4X5isg">Unsplash</a>
+    </p>
+  </div>
 </Layout>
 
 <script>
   window.document.addEventListener("DOMContentLoaded", () => {
     Array.from(document.getElementsByClassName("full-height")).forEach((el) => {
-      (el as HTMLElement).style.height = `${window.innerHeight}px`;
+      (el as HTMLElement).style.minHeight = `${window.innerHeight}px`;
     });
 
     const title = document.querySelector(".page-title");
@@ -42,14 +78,11 @@ import Layout from "../layouts/Layout.astro";
   .page {
     text-align: center;
     padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
     background-color: var(--background);
   }
   .full-height {
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .intro {
@@ -60,8 +93,6 @@ import Layout from "../layouts/Layout.astro";
 
   .page-title {
     font-family: "Abril Fatface", cursive;
-    margin: 0;
-    padding: 0px 0px 0px;
     letter-spacing: -0.01rem;
     line-height: 1;
     font-weight: normal;
@@ -70,7 +101,6 @@ import Layout from "../layouts/Layout.astro";
     cursor: pointer;
     color: rgb(200, 200, 200);
   }
-
   @media screen and (min-width: 375px) {
     .page-title {
       font-size: 70px;
@@ -82,7 +112,6 @@ import Layout from "../layouts/Layout.astro";
       font-size: 112px;
     }
   }
-
   @keyframes arrow-fade-in {
     to {
       opacity: 1;
@@ -107,12 +136,61 @@ import Layout from "../layouts/Layout.astro";
     background-position: center center;
   }
 
-  .content p {
-    padding: 30vh 0px 0px;
-    font-size: 20px;
+  .section-title {
+    font-size: 25px;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+  @media screen and (min-width: 992px) {
+    .section-title {
+      font-size: 40px;
+    }
+  }
+
+  .list {
+    padding-left: 20px;
+    padding-bottom: 40px;
+    text-align: left;
+  }
+  .list li {
+    padding: 5px 0;
+  }
+  .list ul {
+    padding-left: 20px;
+  }
+
+  .content {
+    padding: 50px 0px 0px;
+  }
+  @media screen and (min-width: 992px) {
+    .content {
+      padding: 25vh 0px 0px;
+    }
+  }
+
+  .features {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+  .features div:first-child {
+    margin-right: 20px;
+  }
+
+  .features > div {
+    flex-basis: 50%;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact p {
     line-height: 1.5;
   }
-  .content a {
+  .contact a {
     margin-top: 40px;
     font-size: 20px;
     display: block;
@@ -120,12 +198,12 @@ import Layout from "../layouts/Layout.astro";
     border: 1px solid var(--accent);
     color: var(--font);
     position: relative;
-    padding: 10px 20px;
+    padding: 10px 50px;
     border-radius: 5px;
     z-index: 2;
     transition: all 0.5s ease;
   }
-  .content a:before {
+  .contact a:before {
     content: " ";
     border: 12px solid transparent;
     background-clip: padding-box;
@@ -140,7 +218,7 @@ import Layout from "../layouts/Layout.astro";
     z-index: -1;
     background-image: linear-gradient(165deg, var(--foregraund), var(--accent));
   }
-  .content a:hover {
+  .contact a:hover {
     box-shadow: 0px 3px 6px var(--accent);
   }
 
@@ -151,10 +229,19 @@ import Layout from "../layouts/Layout.astro";
     align-items: center;
     justify-content: center;
     text-align: center;
+    flex-direction: column;
     bottom: 0;
     z-index: -1;
     font-size: 16px;
     padding: 0 10px;
+  }
+
+  .footer p:first-child {
+    padding-bottom: 5px;
+  }
+  .footer p a {
+    text-decoration: none;
+    color: var(--font);
   }
 
   .red {
